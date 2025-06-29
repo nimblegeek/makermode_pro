@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakerMode - Transform Your Business with AI & Automation</title>
+    <meta name="description" content="Helping small and medium businesses become more efficient through AI, automation, and custom software development.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Tokyo Night Color Palette
+                        tokyo: {
+                            50: '#f0f2f5',
+                            100: '#e1e5ea',
+                            200: '#c3cbd5',
+                            300: '#a5b1c0',
+                            400: '#8797ab',
+                            500: '#697d96',
+                            600: '#5b6b82',
+                            700: '#4d596e',
+                            800: '#3f475a',
+                            900: '#313546',
+                            950: '#232332',
+                            1000: '#15151e',
+                            1100: '#0a0a0f',
+                        },
+                        accent: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        purple: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.6s ease-in',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4); }
+            to { box-shadow: 0 0 30px rgba(168, 85, 247, 0.8); }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #a855f7 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-effect {
+            background: rgba(168, 85, 247, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+        .tokyo-gradient {
+            background: linear-gradient(135deg, #232332 0%, #15151e 50%, #0a0a0f 100%);
+        }
+    </style>
+</head>
+<body class="font-inter antialiased bg-tokyo-1000 text-tokyo-100">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-tokyo-950/95 backdrop-blur-md border-b border-tokyo-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-accent-500 rounded-lg flex items-center justify-center animate-glow">
+                        <i class="fas fa-cube text-white text-sm"></i>
+                    </div>
+                    <span class="text-xl font-bold text-tokyo-100">MakerMode</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">Home</a>
+                    <a href="#services" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">Services</a>
+                    <a href="#about" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">About</a>
+                    <a href="#contact" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">Contact</a>
+                    <a href="#contact" class="bg-gradient-to-r from-purple-500 to-accent-500 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-200">Get Started</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="mobile-menu-button text-tokyo-300 hover:text-accent-400">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu hidden md:hidden bg-tokyo-950 border-t border-tokyo-800">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#home" class="block text-tokyo-300 hover:text-accent-400 font-medium">Home</a>
+                <a href="#services" class="block text-tokyo-300 hover:text-accent-400 font-medium">Services</a>
+                <a href="#about" class="block text-tokyo-300 hover:text-accent-400 font-medium">About</a>
+                <a href="#contact" class="block text-tokyo-300 hover:text-accent-400 font-medium">Contact</a>
+                <a href="#contact" class="block bg-gradient-to-r from-purple-500 to-accent-500 text-white px-6 py-3 rounded-full font-medium text-center">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden tokyo-gradient">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-accent-500 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-tokyo-100 space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                            Transform Your Business with 
+                            <span class="gradient-text">AI & Automation</span>
+                        </h1>
+                        <p class="text-xl text-tokyo-300 leading-relaxed">
+                            We help small and medium businesses become more efficient through cutting-edge AI solutions, 
+                            intelligent automation, and custom software development.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-500 to-accent-500 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 animate-glow">
+                            Get Started
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#services" class="inline-flex items-center justify-center px-8 py-4 border-2 border-tokyo-300 text-tokyo-100 font-semibold rounded-full hover:bg-tokyo-300 hover:text-tokyo-900 transition-all duration-300">
+                            Learn More
+                        </a>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-8 pt-8 border-t border-tokyo-800">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent-400">50+</div>
+                            <div class="text-sm text-tokyo-400">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent-400">95%</div>
+                            <div class="text-sm text-tokyo-400">Client Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent-400">40%</div>
+                            <div class="text-sm text-tokyo-400">Efficiency Gain</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative h-96 lg:h-[500px]">
+                        <!-- Floating Cards -->
+                        <div class="absolute top-10 left-10 glass-effect rounded-2xl p-6 animate-float">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-accent-500 rounded-xl flex items-center justify-center mb-3">
+                                <i class="fas fa-robot text-white text-lg"></i>
+                            </div>
+                            <div class="text-tokyo-100 font-semibold">AI Solutions</div>
+                        </div>
+                        
+                        <div class="absolute top-1/2 right-10 glass-effect rounded-2xl p-6 animate-float" style="animation-delay: 2s;">
+                            <div class="w-12 h-12 bg-gradient-to-r from-accent-500 to-purple-500 rounded-xl flex items-center justify-center mb-3">
+                                <i class="fas fa-cogs text-white text-lg"></i>
+                            </div>
+                            <div class="text-tokyo-100 font-semibold">Automation</div>
+                        </div>
+                        
+                        <div class="absolute bottom-10 left-1/3 glass-effect rounded-2xl p-6 animate-float" style="animation-delay: 4s;">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-accent-600 rounded-xl flex items-center justify-center mb-3">
+                                <i class="fas fa-code text-white text-lg"></i>
+                            </div>
+                            <div class="text-tokyo-100 font-semibold">Custom Software</div>
+                        </div>
+
+                        <!-- Central Illustration -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-48 h-48 bg-tokyo-800/20 backdrop-blur-md rounded-full flex items-center justify-center border border-tokyo-700">
+                                <div class="w-32 h-32 bg-gradient-to-r from-purple-500 to-accent-500 rounded-full flex items-center justify-center animate-glow">
+                                    <i class="fas fa-cube text-white text-4xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-tokyo-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-tokyo-100 mb-4">Our Services</h2>
+                <p class="text-xl text-tokyo-400 max-w-3xl mx-auto">
+                    Comprehensive solutions to drive your business forward with cutting-edge technology
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- AI Integration -->
+                <div class="bg-tokyo-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-tokyo-800">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-accent-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-tokyo-100 mb-4">AI Integration</h3>
+                    <p class="text-tokyo-400 mb-6 leading-relaxed">
+                        Implement intelligent AI solutions that learn from your data and automate complex decision-making processes.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-tokyo-300">
+                            <i class="fas fa-check text-accent-400 mr-3"></i>
+                            Machine Learning Models
+                        </li>
+                        <li class="flex items-center text-tokyo-300">
+                            <i class="fas fa-check text-accent-400 mr-3"></i>
+                            Predictive Analytics
+                        </li>
+                        <li class="flex items-center text-tokyo-300">
+                            <i class="fas fa-check text-accent-400 mr-3"></i>
+                            Natural Language Processing
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Process Automation -->
+                <div class="bg-tokyo-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-tokyo-800">
+                    <div class="w-16 h-16 bg-gradient-to-r from-accent-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-tokyo-100 mb-4">Process Automation</h3>
+                    <p class="text-tokyo-400 mb-6 leading-relaxed">
+                        Streamline your operations with intelligent automation that reduces manual work and eliminates errors.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-tokyo-300">
+                            <i class="fas fa-check text-accent-400 mr-3"></i>
+                            Workflow Automation
+                        </li>
+                        <li class="flex items-center text-tokyo-300">
+                            <i class="fas fa-check text-accent-400 mr-3"></i>
+                            RPA Implementation
+                        </li>
+                        <li class="flex items-center text-tokyo-300">
+                            <i class="fas fa-check text-accent-400 mr-3"></i>
+                            API Integration
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Custom Software -->
+                <div class="bg-tokyo-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-tokyo-800">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-accent-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-tokyo-100 mb-4">Custom Software</h3>
+                    <p class="text-tokyo-400 mb-6 leading-relaxed">
+                        Tailored software solutions designed specifically for your business needs and growth objectives.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-tokyo-300">
+                            <i class="fas fa-check text-accent-400 mr-3"></i>
+                            Web Applications
+                        </li>
+                        <li class="flex items-center text-tokyo-300">
+                            <i class="fas fa-check text-accent-400 mr-3"></i>
+                            Mobile Apps
+                        </li>
+                        <li class="flex items-center text-tokyo-300">
+                            <i class="fas fa-check text-accent-400 mr-3"></i>
+                            Enterprise Systems
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-tokyo-1000">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-4xl lg:text-5xl font-bold text-tokyo-100 mb-6">Why Choose MakerMode?</h2>
+                        <p class="text-xl text-tokyo-400 leading-relaxed">
+                            We understand that small and medium businesses face unique challenges. Our approach combines deep technical expertise with practical business understanding to deliver solutions that actually work.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                        <div class="text-center p-6 bg-gradient-to-br from-tokyo-900 to-tokyo-800 rounded-2xl border border-tokyo-700">
+                            <div class="text-4xl font-bold text-accent-400 mb-2 counter" data-target="50">0</div>
+                            <div class="text-tokyo-300 font-medium">Projects Completed</div>
+                        </div>
+                        <div class="text-center p-6 bg-gradient-to-br from-tokyo-900 to-tokyo-800 rounded-2xl border border-tokyo-700">
+                            <div class="text-4xl font-bold text-accent-400 mb-2 counter" data-target="95">0</div>
+                            <div class="text-tokyo-300 font-medium">Client Satisfaction</div>
+                        </div>
+                        <div class="text-center p-6 bg-gradient-to-br from-tokyo-900 to-tokyo-800 rounded-2xl border border-tokyo-700">
+                            <div class="text-4xl font-bold text-accent-400 mb-2 counter" data-target="40">0</div>
+                            <div class="text-tokyo-300 font-medium">Efficiency Gain</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-tokyo-900 to-tokyo-800 rounded-3xl p-12 text-tokyo-100 text-center shadow-2xl border border-tokyo-700">
+                        <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-glow">
+                            <i class="fas fa-chart-line text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Business Growth</h3>
+                        <p class="text-lg text-tokyo-300">
+                            Transform your operations and scale your business with intelligent technology solutions.
+                        </p>
+                    </div>
+                    
+                    <!-- Floating elements -->
+                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-accent-500 rounded-full animate-pulse"></div>
+                    <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-tokyo-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-tokyo-100 mb-4">Ready to Transform Your Business?</h2>
+                <p class="text-xl text-tokyo-400 max-w-3xl mx-auto">
+                    Let's discuss how we can help you achieve your goals with AI and automation solutions.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-tokyo-900 rounded-2xl p-8 shadow-xl border border-tokyo-800">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-tokyo-200 mb-2">Name *</label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full px-4 py-3 bg-tokyo-800 border border-tokyo-700 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 text-tokyo-100 placeholder-tokyo-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-tokyo-200 mb-2">Email *</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 bg-tokyo-800 border border-tokyo-700 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 text-tokyo-100 placeholder-tokyo-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="company" class="block text-sm font-semibold text-tokyo-200 mb-2">Company</label>
+                            <input type="text" id="company" name="company" 
+                                   class="w-full px-4 py-3 bg-tokyo-800 border border-tokyo-700 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 text-tokyo-100 placeholder-tokyo-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-tokyo-200 mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full px-4 py-3 bg-tokyo-800 border border-tokyo-700 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 text-tokyo-100 placeholder-tokyo-500 resize-none"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-purple-500 to-accent-500 text-white py-4 px-8 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-6">
+                    <div class="bg-tokyo-900 rounded-2xl p-8 shadow-xl border border-tokyo-800">
+                        <h3 class="text-2xl font-bold text-tokyo-100 mb-6">Get in Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-accent-500 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-tokyo-100">Email</h4>
+                                    <p class="text-tokyo-400">hello@makermode.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-accent-500 to-purple-500 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-tokyo-100">Phone</h4>
+                                    <p class="text-tokyo-400">+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-accent-600 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-tokyo-100">Location</h4>
+                                    <p class="text-tokyo-400">San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="bg-gradient-to-r from-tokyo-900 to-tokyo-800 rounded-2xl p-8 text-tokyo-100 border border-tokyo-700">
+                        <h3 class="text-2xl font-bold mb-4">Why Work With Us?</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-accent-400"></i>
+                                Expert AI & ML Solutions
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-accent-400"></i>
+                                Proven Track Record
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-accent-400"></i>
+                                Dedicated Support Team
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-tokyo-1100 text-tokyo-100 py-16 border-t border-tokyo-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-accent-500 rounded-lg flex items-center justify-center animate-glow">
+                            <i class="fas fa-cube text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold">MakerMode</span>
+                    </div>
+                    <p class="text-tokyo-400 leading-relaxed">
+                        Transforming businesses through intelligent technology solutions and cutting-edge AI implementation.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-tokyo-100">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-tokyo-400 hover:text-accent-400 transition-colors">AI Integration</a></li>
+                        <li><a href="#services" class="text-tokyo-400 hover:text-accent-400 transition-colors">Process Automation</a></li>
+                        <li><a href="#services" class="text-tokyo-400 hover:text-accent-400 transition-colors">Custom Software</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-tokyo-100">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-tokyo-400 hover:text-accent-400 transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="text-tokyo-400 hover:text-accent-400 transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-tokyo-400 hover:text-accent-400 transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-tokyo-100">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-tokyo-900 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-tokyo-900 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-tokyo-900 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-tokyo-800 pt-8 text-center">
+                <p class="text-tokyo-500">&copy; 2024 MakerMode. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
