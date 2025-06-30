@@ -118,7 +118,7 @@
                     <a href="#services" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">Services</a>
                     <a href="#about" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">About</a>
                     <a href="#contact" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">Contact</a>
-                    <a href="https://cal.com/jonas-achouri-sihlen-ix2qum/15min" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-500 to-accent-500 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-200">Get Started</a>
+                    <a href="https://cal.com/jonas-achouri-sihlen-ix2qum/15min" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-500 to-accent-500 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-200">Book a call</a>
                 </div>
 
                 <!-- Mobile menu button -->
@@ -241,7 +241,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- AI Integration -->
-                <div class="bg-tokyo-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-tokyo-800">
+                <div class="service-card bg-tokyo-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-tokyo-800 cursor-pointer" onclick="openModal('ai-modal')">
                     <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-accent-500 rounded-2xl flex items-center justify-center mb-6">
                         <i class="fas fa-brain text-white text-2xl"></i>
                     </div>
@@ -263,10 +263,13 @@
                             Natural Language Processing
                         </li>
                     </ul>
+                    <div class="mt-6 text-accent-400 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
                 </div>
 
                 <!-- Process Automation -->
-                <div class="bg-tokyo-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-tokyo-800">
+                <div class="service-card bg-tokyo-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-tokyo-800 cursor-pointer" onclick="openModal('automation-modal')">
                     <div class="w-16 h-16 bg-gradient-to-r from-accent-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
                         <i class="fas fa-cogs text-white text-2xl"></i>
                     </div>
@@ -288,10 +291,13 @@
                             API Integration
                         </li>
                     </ul>
+                    <div class="mt-6 text-accent-400 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
                 </div>
 
                 <!-- Custom Software -->
-                <div class="bg-tokyo-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-tokyo-800">
+                <div class="service-card bg-tokyo-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-tokyo-800 cursor-pointer" onclick="openModal('software-modal')">
                     <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-accent-600 rounded-2xl flex items-center justify-center mb-6">
                         <i class="fas fa-code text-white text-2xl"></i>
                     </div>
@@ -313,6 +319,9 @@
                             Enterprise Systems
                         </li>
                     </ul>
+                    <div class="mt-6 text-accent-400 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -545,6 +554,247 @@
             </div>
         </div>
     </footer>
+
+    <!-- Service Modals -->
+    <!-- AI Integration Modal -->
+    <div id="ai-modal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="modal-content bg-tokyo-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-tokyo-700">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-accent-500 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-brain text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold text-tokyo-100">AI Integration</h2>
+                            <p class="text-tokyo-400">Intelligent solutions for your business</p>
+                        </div>
+                    </div>
+                    <button onclick="closeModal('ai-modal')" class="text-tokyo-400 hover:text-tokyo-100 text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-tokyo-100 mb-4">What We Offer</h3>
+                        <div class="space-y-4">
+                            <div class="bg-tokyo-800 rounded-xl p-4">
+                                <h4 class="font-semibold text-accent-400 mb-2">Machine Learning Models</h4>
+                                <p class="text-tokyo-300 text-sm">Custom ML models trained on your data to predict trends, automate decisions, and optimize processes.</p>
+                            </div>
+                            <div class="bg-tokyo-800 rounded-xl p-4">
+                                <h4 class="font-semibold text-accent-400 mb-2">Predictive Analytics</h4>
+                                <p class="text-tokyo-300 text-sm">Advanced analytics to forecast business outcomes and identify opportunities for growth.</p>
+                            </div>
+                            <div class="bg-tokyo-800 rounded-xl p-4">
+                                <h4 class="font-semibold text-accent-400 mb-2">Natural Language Processing</h4>
+                                <p class="text-tokyo-300 text-sm">AI-powered text analysis, chatbots, and document processing to enhance customer interactions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-tokyo-100 mb-4">Benefits</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Reduce manual data processing by up to 80%</span>
+                            </li>
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Improve decision accuracy with data-driven insights</span>
+                            </li>
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Scale operations without proportional cost increase</span>
+                            </li>
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Enhance customer experience with intelligent automation</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-6 p-4 bg-gradient-to-r from-purple-500/10 to-accent-500/10 rounded-xl border border-purple-500/20">
+                            <h4 class="font-semibold text-tokyo-100 mb-2">Perfect For:</h4>
+                            <p class="text-tokyo-300 text-sm">Businesses looking to leverage their data for competitive advantage, automate complex processes, and create intelligent customer experiences.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                    <a href="https://cal.com/jonas-achouri-sihlen-ix2qum/15min" target="_blank" rel="noopener noreferrer" 
+                       class="bg-gradient-to-r from-purple-500 to-accent-500 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-center">
+                        Book AI Consultation
+                    </a>
+                    <button onclick="closeModal('ai-modal')" 
+                            class="border border-tokyo-600 text-tokyo-300 px-8 py-3 rounded-xl font-semibold hover:bg-tokyo-800 transition-all duration-300">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process Automation Modal -->
+    <div id="automation-modal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="modal-content bg-tokyo-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-tokyo-700">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-gradient-to-r from-accent-500 to-purple-500 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-cogs text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold text-tokyo-100">Process Automation</h2>
+                            <p class="text-tokyo-400">Streamline your operations</p>
+                        </div>
+                    </div>
+                    <button onclick="closeModal('automation-modal')" class="text-tokyo-400 hover:text-tokyo-100 text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-tokyo-100 mb-4">What We Offer</h3>
+                        <div class="space-y-4">
+                            <div class="bg-tokyo-800 rounded-xl p-4">
+                                <h4 class="font-semibold text-accent-400 mb-2">Workflow Automation</h4>
+                                <p class="text-tokyo-300 text-sm">Automate repetitive tasks and workflows to free up your team for high-value activities.</p>
+                            </div>
+                            <div class="bg-tokyo-800 rounded-xl p-4">
+                                <h4 class="font-semibold text-accent-400 mb-2">RPA Implementation</h4>
+                                <p class="text-tokyo-300 text-sm">Robotic Process Automation to handle rule-based tasks across multiple systems.</p>
+                            </div>
+                            <div class="bg-tokyo-800 rounded-xl p-4">
+                                <h4 class="font-semibold text-accent-400 mb-2">API Integration</h4>
+                                <p class="text-tokyo-300 text-sm">Connect your existing tools and systems for seamless data flow and process integration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-tokyo-100 mb-4">Benefits</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Reduce operational costs by 30-50%</span>
+                            </li>
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Eliminate human errors in repetitive tasks</span>
+                            </li>
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Improve process consistency and compliance</span>
+                            </li>
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Scale operations without hiring additional staff</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-6 p-4 bg-gradient-to-r from-accent-500/10 to-purple-500/10 rounded-xl border border-accent-500/20">
+                            <h4 class="font-semibold text-tokyo-100 mb-2">Perfect For:</h4>
+                            <p class="text-tokyo-300 text-sm">Companies with repetitive manual processes, data entry tasks, or complex workflows that can benefit from automation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                    <a href="https://cal.com/jonas-achouri-sihlen-ix2qum/15min" target="_blank" rel="noopener noreferrer" 
+                       class="bg-gradient-to-r from-accent-500 to-purple-500 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-center">
+                        Book Automation Consultation
+                    </a>
+                    <button onclick="closeModal('automation-modal')" 
+                            class="border border-tokyo-600 text-tokyo-300 px-8 py-3 rounded-xl font-semibold hover:bg-tokyo-800 transition-all duration-300">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Software Modal -->
+    <div id="software-modal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="modal-content bg-tokyo-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-tokyo-700">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-accent-600 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-code text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold text-tokyo-100">Custom Software</h2>
+                            <p class="text-tokyo-400">Tailored solutions for your business</p>
+                        </div>
+                    </div>
+                    <button onclick="closeModal('software-modal')" class="text-tokyo-400 hover:text-tokyo-100 text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-tokyo-100 mb-4">What We Offer</h3>
+                        <div class="space-y-4">
+                            <div class="bg-tokyo-800 rounded-xl p-4">
+                                <h4 class="font-semibold text-accent-400 mb-2">Web Applications</h4>
+                                <p class="text-tokyo-300 text-sm">Modern, responsive web applications built with the latest technologies for optimal performance.</p>
+                            </div>
+                            <div class="bg-tokyo-800 rounded-xl p-4">
+                                <h4 class="font-semibold text-accent-400 mb-2">Mobile Apps</h4>
+                                <p class="text-tokyo-300 text-sm">Cross-platform mobile applications that work seamlessly on iOS and Android devices.</p>
+                            </div>
+                            <div class="bg-tokyo-800 rounded-xl p-4">
+                                <h4 class="font-semibold text-accent-400 mb-2">Enterprise Systems</h4>
+                                <p class="text-tokyo-300 text-sm">Scalable enterprise solutions designed to handle complex business processes and large user bases.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-tokyo-100 mb-4">Benefits</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Solutions built specifically for your unique needs</span>
+                            </li>
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Full ownership and control of your software</span>
+                            </li>
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Scalable architecture that grows with your business</span>
+                            </li>
+                            <li class="flex items-start text-tokyo-300">
+                                <i class="fas fa-check-circle text-accent-400 mr-3 mt-1"></i>
+                                <span>Integration with your existing tools and systems</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-6 p-4 bg-gradient-to-r from-purple-600/10 to-accent-600/10 rounded-xl border border-purple-600/20">
+                            <h4 class="font-semibold text-tokyo-100 mb-2">Perfect For:</h4>
+                            <p class="text-tokyo-300 text-sm">Businesses with unique processes that can't be solved with off-the-shelf software, or those needing complete control over their digital solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                    <a href="https://cal.com/jonas-achouri-sihlen-ix2qum/15min" target="_blank" rel="noopener noreferrer" 
+                       class="bg-gradient-to-r from-purple-600 to-accent-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 text-center">
+                        Book Software Consultation
+                    </a>
+                    <button onclick="closeModal('software-modal')" 
+                            class="border border-tokyo-600 text-tokyo-300 px-8 py-3 rounded-xl font-semibold hover:bg-tokyo-800 transition-all duration-300">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

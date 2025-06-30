@@ -401,4 +401,76 @@ const createParticles = () => {
 };
 
 // Initialize particles
-document.addEventListener('DOMContentLoaded', createParticles); 
+document.addEventListener('DOMContentLoaded', createParticles);
+
+// Modal functionality
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        modal.style.opacity = '0';
+        modal.style.transform = 'scale(0.9)';
+        
+        // Animate in
+        setTimeout(() => {
+            modal.style.opacity = '1';
+            modal.style.transform = 'scale(1)';
+        }, 10);
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.opacity = '0';
+        modal.style.transform = 'scale(0.9)';
+        
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }, 300);
+    }
+}
+
+// Make modal functions globally accessible
+window.openModal = openModal;
+window.closeModal = closeModal;
+
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', () => {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                const modalId = modal.id;
+                closeModal(modalId);
+            }
+        });
+    });
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const openModal = document.querySelector('.modal:not(.hidden)');
+        if (openModal) {
+            closeModal(openModal.id);
+        }
+    }
+});
+
+// Add modal styles
+const modalStyles = `
+    .modal {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .modal-content {
+        transition: transform 0.3s ease;
+    }
+`;
+
+// Inject modal styles
+const styleSheet = document.createElement('style');
+styleSheet.textContent = modalStyles;
+document.head.appendChild(styleSheet); 
