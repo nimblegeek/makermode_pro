@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - MakerMode | AI, Automation & Custom Software Insights</title>
+    <meta name="description" content="Latest insights, tutorials, and articles about AI integration, process automation, and custom software development from MakerMode.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Tokyo Night Color Palette
+                        tokyo: {
+                            50: '#f0f2f5',
+                            100: '#e1e5ea',
+                            200: '#c3cbd5',
+                            300: '#a5b1c0',
+                            400: '#8797ab',
+                            500: '#697d96',
+                            600: '#5b6b82',
+                            700: '#4d596e',
+                            800: '#3f475a',
+                            900: '#313546',
+                            950: '#232332',
+                            1000: '#15151e',
+                            1100: '#0a0a0f',
+                        },
+                        accent: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        purple: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7c3aed',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.6s ease-in',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4); }
+            to { box-shadow: 0 0 30px rgba(168, 85, 247, 0.8); }
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #a855f7 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-effect {
+            background: rgba(168, 85, 247, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+        .tokyo-gradient {
+            background: linear-gradient(135deg, #232332 0%, #15151e 50%, #0a0a0f 100%);
+        }
+    </style>
+</head>
+<body class="font-inter antialiased bg-tokyo-1000 text-tokyo-100">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-tokyo-950/95 backdrop-blur-md border-b border-tokyo-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-accent-500 rounded-lg flex items-center justify-center animate-glow">
+                        <i class="fas fa-cube text-white text-sm"></i>
+                    </div>
+                    <span class="text-xl font-bold text-tokyo-100">MakerMode</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">Home</a>
+                    <a href="index.html#services" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">Services</a>
+                    <a href="index.html#about" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">About</a>
+                    <a href="blog.html" class="text-accent-400 font-medium">Blog</a>
+                    <a href="index.html#contact" class="text-tokyo-300 hover:text-accent-400 font-medium transition-colors duration-200">Contact</a>
+                    <a href="https://cal.com/jonas-achouri-sihlen-ix2qum/15min" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-purple-500 to-accent-500 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-200">Book a call</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="mobile-menu-button text-tokyo-300 hover:text-accent-400">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu hidden md:hidden bg-tokyo-950 border-t border-tokyo-800">
+            <div class="px-4 py-6 space-y-4">
+                <a href="index.html" class="block text-tokyo-300 hover:text-accent-400 font-medium">Home</a>
+                <a href="index.html#services" class="block text-tokyo-300 hover:text-accent-400 font-medium">Services</a>
+                <a href="index.html#about" class="block text-tokyo-300 hover:text-accent-400 font-medium">About</a>
+                <a href="blog.html" class="block text-accent-400 font-medium">Blog</a>
+                <a href="index.html#contact" class="block text-tokyo-300 hover:text-accent-400 font-medium">Contact</a>
+                <a href="https://cal.com/jonas-achouri-sihlen-ix2qum/15min" target="_blank" rel="noopener noreferrer" class="block bg-gradient-to-r from-purple-500 to-accent-500 text-white px-6 py-3 rounded-full font-medium text-center">Book a call</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-tokyo-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl lg:text-6xl font-bold text-tokyo-100 mb-6">
+                    MakerMode <span class="gradient-text">Blog</span>
+                </h1>
+                <p class="text-xl text-tokyo-400 max-w-3xl mx-auto mb-8">
+                    Insights, tutorials, and deep dives into AI integration, process automation, and custom software development.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-4 py-2 bg-tokyo-800 rounded-full text-tokyo-300 text-sm">AI & ML</span>
+                    <span class="px-4 py-2 bg-tokyo-800 rounded-full text-tokyo-300 text-sm">Automation</span>
+                    <span class="px-4 py-2 bg-tokyo-800 rounded-full text-tokyo-300 text-sm">Custom Software</span>
+                    <span class="px-4 py-2 bg-tokyo-800 rounded-full text-tokyo-300 text-sm">Tutorials</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="py-20 bg-tokyo-1000">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Featured Post -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-tokyo-100 mb-8">Featured Article</h2>
+                <div class="bg-tokyo-900 rounded-2xl overflow-hidden border border-tokyo-800 hover:shadow-2xl transition-all duration-300">
+                    <div class="md:flex">
+                        <div class="md:w-1/3 bg-gradient-to-br from-purple-500/10 to-accent-500/10 p-8 flex items-center justify-center">
+                            <i class="fas fa-brain text-6xl text-accent-400"></i>
+                        </div>
+                        <div class="md:w-2/3 p-8">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="px-3 py-1 bg-accent-500/20 text-accent-400 rounded-full text-sm font-medium">AI Integration</span>
+                                <span class="px-3 py-1 bg-tokyo-700 text-tokyo-300 rounded-full text-sm font-medium">Guide</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-tokyo-100 mb-4">
+                                The Complete Guide to AI Integration for Small Businesses
+                            </h3>
+                            <p class="text-tokyo-400 mb-6 leading-relaxed">
+                                Discover how small and medium businesses can leverage AI to gain competitive advantages, automate processes, and drive growth without breaking the bank. This comprehensive guide covers everything from initial assessment to full implementation.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4 text-sm text-tokyo-500">
+                                    <span><i class="fas fa-calendar mr-1"></i> June 30, 2024</span>
+                                    <span><i class="fas fa-clock mr-1"></i> 8 min read</span>
+                                </div>
+                                <a href="#" class="text-accent-400 hover:text-accent-300 font-medium flex items-center">
+                                    Read More <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Post 1 -->
+                <article class="bg-tokyo-900 rounded-2xl overflow-hidden border border-tokyo-800 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="px-3 py-1 bg-accent-500/20 text-accent-400 rounded-full text-sm font-medium">Automation</span>
+                            <span class="px-3 py-1 bg-tokyo-700 text-tokyo-300 rounded-full text-sm font-medium">Tutorial</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tokyo-100 mb-3">
+                            Building Your First RPA Bot: A Step-by-Step Tutorial
+                        </h3>
+                        <p class="text-tokyo-400 mb-4 text-sm leading-relaxed">
+                            Learn how to create your first robotic process automation bot using Python and popular RPA frameworks. This hands-on tutorial will walk you through automating a common business process.
+                        </p>
+                        <div class="flex items-center justify-between text-sm text-tokyo-500 mb-4">
+                            <span><i class="fas fa-calendar mr-1"></i> June 28, 2024</span>
+                            <span><i class="fas fa-clock mr-1"></i> 12 min read</span>
+                        </div>
+                        <a href="#" class="text-accent-400 hover:text-accent-300 text-sm font-medium">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="bg-tokyo-900 rounded-2xl overflow-hidden border border-tokyo-800 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium">Custom Software</span>
+                            <span class="px-3 py-1 bg-tokyo-700 text-tokyo-300 rounded-full text-sm font-medium">Case Study</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tokyo-100 mb-3">
+                            How We Built a Custom CRM That Increased Sales by 40%
+                        </h3>
+                        <p class="text-tokyo-400 mb-4 text-sm leading-relaxed">
+                            A detailed case study of how we developed a custom CRM system for a mid-sized manufacturing company, resulting in significant sales improvements and operational efficiency gains.
+                        </p>
+                        <div class="flex items-center justify-between text-sm text-tokyo-500 mb-4">
+                            <span><i class="fas fa-calendar mr-1"></i> June 25, 2024</span>
+                            <span><i class="fas fa-clock mr-1"></i> 6 min read</span>
+                        </div>
+                        <a href="#" class="text-accent-400 hover:text-accent-300 text-sm font-medium">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="bg-tokyo-900 rounded-2xl overflow-hidden border border-tokyo-800 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="px-3 py-1 bg-accent-500/20 text-accent-400 rounded-full text-sm font-medium">AI Integration</span>
+                            <span class="px-3 py-1 bg-tokyo-700 text-tokyo-300 rounded-full text-sm font-medium">Guide</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tokyo-100 mb-3">
+                            Choosing the Right AI Model for Your Business Needs
+                        </h3>
+                        <p class="text-tokyo-400 mb-4 text-sm leading-relaxed">
+                            A comprehensive guide to selecting the perfect AI model for your specific business requirements. Learn about different model types, their use cases, and implementation considerations.
+                        </p>
+                        <div class="flex items-center justify-between text-sm text-tokyo-500 mb-4">
+                            <span><i class="fas fa-calendar mr-1"></i> June 22, 2024</span>
+                            <span><i class="fas fa-clock mr-1"></i> 10 min read</span>
+                        </div>
+                        <a href="#" class="text-accent-400 hover:text-accent-300 text-sm font-medium">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="bg-tokyo-900 rounded-2xl overflow-hidden border border-tokyo-800 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="px-3 py-1 bg-accent-500/20 text-accent-400 rounded-full text-sm font-medium">Automation</span>
+                            <span class="px-3 py-1 bg-tokyo-700 text-tokyo-300 rounded-full text-sm font-medium">Tips</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tokyo-100 mb-3">
+                            5 Automation Mistakes That Cost Businesses Money
+                        </h3>
+                        <p class="text-tokyo-400 mb-4 text-sm leading-relaxed">
+                            Common pitfalls in automation projects and how to avoid them. Learn from real-world examples and discover best practices for successful automation implementation.
+                        </p>
+                        <div class="flex items-center justify-between text-sm text-tokyo-500 mb-4">
+                            <span><i class="fas fa-calendar mr-1"></i> June 20, 2024</span>
+                            <span><i class="fas fa-clock mr-1"></i> 7 min read</span>
+                        </div>
+                        <a href="#" class="text-accent-400 hover:text-accent-300 text-sm font-medium">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="bg-tokyo-900 rounded-2xl overflow-hidden border border-tokyo-800 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium">Custom Software</span>
+                            <span class="px-3 py-1 bg-tokyo-700 text-tokyo-300 rounded-full text-sm font-medium">Tutorial</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tokyo-100 mb-3">
+                            Building a REST API with FastAPI: Complete Tutorial
+                        </h3>
+                        <p class="text-tokyo-400 mb-4 text-sm leading-relaxed">
+                            A step-by-step tutorial on building modern, fast APIs using FastAPI and Python. Includes authentication, database integration, and deployment strategies.
+                        </p>
+                        <div class="flex items-center justify-between text-sm text-tokyo-500 mb-4">
+                            <span><i class="fas fa-calendar mr-1"></i> June 18, 2024</span>
+                            <span><i class="fas fa-clock mr-1"></i> 15 min read</span>
+                        </div>
+                        <a href="#" class="text-accent-400 hover:text-accent-300 text-sm font-medium">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="bg-tokyo-900 rounded-2xl overflow-hidden border border-tokyo-800 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="px-3 py-1 bg-accent-500/20 text-accent-400 rounded-full text-sm font-medium">AI Integration</span>
+                            <span class="px-3 py-1 bg-tokyo-700 text-tokyo-300 rounded-full text-sm font-medium">Industry</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tokyo-100 mb-3">
+                            The Future of AI in Manufacturing: 2024 Trends
+                        </h3>
+                        <p class="text-tokyo-400 mb-4 text-sm leading-relaxed">
+                            Explore the latest AI trends transforming the manufacturing industry, from predictive maintenance to quality control automation and smart supply chains.
+                        </p>
+                        <div class="flex items-center justify-between text-sm text-tokyo-500 mb-4">
+                            <span><i class="fas fa-calendar mr-1"></i> June 15, 2024</span>
+                            <span><i class="fas fa-clock mr-1"></i> 9 min read</span>
+                        </div>
+                        <a href="#" class="text-accent-400 hover:text-accent-300 text-sm font-medium">Read More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="bg-gradient-to-r from-purple-500 to-accent-500 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-tokyo-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-tokyo-100 mb-4">Stay Updated</h2>
+            <p class="text-xl text-tokyo-400 mb-8">
+                Get the latest insights on AI, automation, and custom software delivered to your inbox.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Enter your email" 
+                       class="flex-1 px-4 py-3 bg-tokyo-800 border border-tokyo-700 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent transition-all duration-200 text-tokyo-100 placeholder-tokyo-500">
+                <button class="bg-gradient-to-r from-purple-500 to-accent-500 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-tokyo-1100 text-tokyo-100 py-16 border-t border-tokyo-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-r from-purple-500 to-accent-500 rounded-lg flex items-center justify-center animate-glow">
+                            <i class="fas fa-cube text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold">MakerMode</span>
+                    </div>
+                    <p class="text-tokyo-400 leading-relaxed">
+                        Transforming businesses without corporate bs and huge IT budgets. We help you compress the complexity of your business processes with custom solutions, powered but not limited to AI.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-tokyo-100">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#services" class="text-tokyo-400 hover:text-accent-400 transition-colors">AI Integration</a></li>
+                        <li><a href="index.html#services" class="text-tokyo-400 hover:text-accent-400 transition-colors">Process Automation</a></li>
+                        <li><a href="index.html#services" class="text-tokyo-400 hover:text-accent-400 transition-colors">Custom Software</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-tokyo-100">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-tokyo-400 hover:text-accent-400 transition-colors">About Us</a></li>
+                        <li><a href="blog.html" class="text-tokyo-400 hover:text-accent-400 transition-colors">Blog</a></li>
+                        <li><a href="index.html#contact" class="text-tokyo-400 hover:text-accent-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-tokyo-100">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-tokyo-900 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-tokyo-900 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-tokyo-900 rounded-lg flex items-center justify-center hover:bg-accent-500 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-tokyo-800 pt-8 text-center">
+                <p class="text-tokyo-500">&copy; 2024 MakerMode. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
